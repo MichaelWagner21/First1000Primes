@@ -6,25 +6,27 @@ class Primes {
 
         final double startTime = System.currentTimeMillis();
 
-        int numOfPrimes = 1000;
+        int numOfPrimes = 100000;
         int numsPrinted = 0;
         int numberIterator = 2;
+        int recordedPrimes[] = new int[numOfPrimes];
+        
         boolean composite = false;
         while (numsPrinted<numOfPrimes){
             composite = false;
-            int i = 2;
-            while (i<numberIterator){
-                if (i!=numberIterator){
-                    if (numberIterator%i==0){
-                        composite = true;
-                    }
-                        
+
+
+            for (int i = 0; recordedPrimes[i]>0; i++){
+                if (numberIterator%recordedPrimes[i]==0){
+                    composite = true;
                 }
-                i++;
             }
+
+                
         
             if (!composite){
                 System.out.println(numberIterator);
+                recordedPrimes[numsPrinted]=numberIterator;
                 numsPrinted++;
             }
                 
@@ -35,8 +37,5 @@ class Primes {
         final double endTime = System.currentTimeMillis();
 
         System.out.println("--- " + ((endTime - startTime)/1000) + " seconds ---");
-        
-        
     }
-    
 }
