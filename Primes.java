@@ -6,15 +6,14 @@ class Primes {
 
         final double startTime = System.currentTimeMillis();
 
-        int numOfPrimes = 1000;
+        int numOfPrimes = 10;
         int numsPrinted = 0;
         int numberIterator = 2;
-        int recordedPrimes[] = new int[numOfPrimes+1];
+        int recordedPrimes[] = new int[numOfPrimes*numOfPrimes+1];
         
         boolean composite = false;
         while (numsPrinted<numOfPrimes){
             composite = false;
-
 
             for (int i = 0; recordedPrimes[2*i]>0; i++){
                 if (numberIterator%recordedPrimes[i]==0){
@@ -22,8 +21,6 @@ class Primes {
                 }
             }
 
-                
-        
             if (!composite){
                 System.out.println(numberIterator);
                 recordedPrimes[numsPrinted]=numberIterator;
