@@ -6,18 +6,23 @@ class Primes {
 
         final double startTime = System.currentTimeMillis();
 
-        int numOfPrimes = 10;
+        int numOfPrimes = 10000;
         int numsPrinted = 0;
         int numberIterator = 2;
-        int recordedPrimes[] = new int[numOfPrimes*numOfPrimes+1];
+        int recordedPrimes[] = new int[numOfPrimes+1];
+        int ceilingCheck;
         
         boolean composite = false;
         while (numsPrinted<numOfPrimes){
+            ceilingCheck = numberIterator;
             composite = false;
 
-            for (int i = 0; recordedPrimes[2*i]>0; i++){
+            for (int i = 0; (recordedPrimes[i]<ceilingCheck)&(recordedPrimes[i]!=0); i++){
                 if (numberIterator%recordedPrimes[i]==0){
                     composite = true;
+                }
+                else {
+                    ceilingCheck=numberIterator/recordedPrimes[i];
                 }
             }
 

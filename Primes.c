@@ -7,27 +7,31 @@ void main()
 {
     clock_t begin = clock();
 
-    char int_str[5];
-    int numOfPrimes = 1000;
+    int numOfPrimes = 10000;
     int numsPrinted = 0;
     int numberIterator = 2;
+    int recordedPrimes[numOfPrimes];
     bool composite = false;
+    int ceilingCheck;
+
     while (numsPrinted<numOfPrimes){
+        ceilingCheck = numberIterator;
         composite = false;
-        int i = 2;
-        while (i<numberIterator){
-            if (i!=numberIterator){
-                if (numberIterator%i==0){
+        int i = 0;
+
+        while ((recordedPrimes[i]<ceilingCheck) & (recordedPrimes[i]!=0)){
+            if (numberIterator%recordedPrimes[i]==0){
                     composite = true;
-                }
-                    
+            }
+            else {
+                ceilingCheck=numberIterator/recordedPrimes[i];
             }
             i++;
         }
     
         if (!composite){
-            sprintf(int_str, "%d", numberIterator);
-            printf("%s\n", int_str);
+            printf("%d\n", numberIterator);
+            recordedPrimes[numsPrinted]=numberIterator;
             numsPrinted++;
         }
             
