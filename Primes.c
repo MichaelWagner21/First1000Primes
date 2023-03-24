@@ -8,7 +8,6 @@ void main()
     clock_t begin = clock();
 
     int numOfPrimes = 100000;
-    
     int numsPrinted = 0;
     int numberIterator = 2;
     int recordedPrimes[numOfPrimes];
