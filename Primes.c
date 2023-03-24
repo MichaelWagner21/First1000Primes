@@ -5,7 +5,7 @@
 
 //Fastest personal algorithm so far
 
-void main()
+int main()
 {
     clock_t begin = clock();
 
@@ -45,4 +45,7 @@ void main()
     clock_t end = clock();
     double time_spent = (double)(end-begin) / (double)CLOCKS_PER_SEC;
     printf("--- %f seconds ---\n", time_spent);
+
+
+    return 0;
 }
