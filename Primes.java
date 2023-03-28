@@ -10,19 +10,16 @@ class Primes {
         int numsPrinted = 0;
         int numberIterator = 2;
         int recordedPrimes[] = new int[numOfPrimes+1];
-        int ceilingCheck;
+        double ceilingCheck;
         
         boolean composite = false;
         while (numsPrinted<numOfPrimes){
-            ceilingCheck = numberIterator;
+            ceilingCheck = Math.sqrt(numberIterator);
             composite = false;
 
-            for (int i = 0; (recordedPrimes[i]<ceilingCheck)&(recordedPrimes[i]!=0); i++){
+            for (int i = 0; (recordedPrimes[i]<=ceilingCheck)&(recordedPrimes[i]!=0); i++){
                 if (numberIterator%recordedPrimes[i]==0){
                     composite = true;
-                }
-                else {
-                    ceilingCheck=numberIterator/recordedPrimes[i];
                 }
             }
 
