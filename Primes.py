@@ -1,6 +1,6 @@
 import time
 start_time = time.time()
-numOfPrimes = 1000
+numOfPrimes = 100000
 numsPrinted = 0
 numberIterator = 2
 composite = False
