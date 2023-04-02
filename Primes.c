@@ -10,11 +10,11 @@ int main()
 {
     clock_t begin = clock();
 
-    int numOfPrimes = 100000;
+    int numOfPrimes = 517754;
 
     int numsPrinted = 0;
     int numberIterator = 2;
-    int recordedPrimes[numOfPrimes+1];
+    int recordedPrimes[numOfPrimes];
     bool composite = false;
     double ceilingCheck;
 
