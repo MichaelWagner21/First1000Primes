@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <math.h>
 
 //Fastest personal algorithm so far
 
@@ -13,24 +14,19 @@ int main()
 
     int numsPrinted = 0;
     int numberIterator = 2;
-    int recordedPrimes[numOfPrimes];
+    int recordedPrimes[numOfPrimes+1];
     bool composite = false;
-    int ceilingCheck;
+    double ceilingCheck;
 
     while (numsPrinted<numOfPrimes){
-        ceilingCheck = numberIterator;
+        ceilingCheck = sqrt(numberIterator);
         composite = false;
-        int i = 0;
 
-        while ((recordedPrimes[i]<ceilingCheck) & (recordedPrimes[i]!=0)){
-            if (numberIterator%recordedPrimes[i]==0){
+        for (int i = 0; (recordedPrimes[i]<=ceilingCheck)&(recordedPrimes[i]!=0); i++){
+                if (numberIterator%recordedPrimes[i]==0){
                     composite = true;
+                }
             }
-            else {
-                ceilingCheck=numberIterator/recordedPrimes[i];
-            }
-            i++;
-        }
     
         if (!composite){
             printf("%d\n", numberIterator);
