@@ -14,7 +14,7 @@ int main()
 
     int numsPrinted = 0;
     int numberIterator = 2;
-    int recordedPrimes[numOfPrimes];
+    int recordedPrimes[numOfPrimes+1];
     bool composite = false;
     double ceilingCheck;
 
