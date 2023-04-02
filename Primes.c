@@ -10,7 +10,8 @@ int main()
 {
     clock_t begin = clock();
 
-    int numOfPrimes = 517754;
+    int numOfPrimes = 100000;
+    // largest number it will do for numOfPrimes for some reason: 517754
 
     int numsPrinted = 0;
     int numberIterator = 2;
