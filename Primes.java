@@ -6,7 +6,7 @@ class Primes {
 
         final double startTime = System.currentTimeMillis();
 
-        int numOfPrimes = 1000000;
+        int numOfPrimes = 100000;
         int numsPrinted = 0;
         int numberIterator = 2;
         int recordedPrimes[] = new int[numOfPrimes+1];
